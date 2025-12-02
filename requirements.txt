@@ -1,0 +1,7 @@
+fastapi
+uvicorn
+cryptography
+pyotp
+requests
+pydantic
+pytz

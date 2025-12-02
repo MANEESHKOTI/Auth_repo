@@ -1,0 +1,23 @@
+version: '3.8'
+
+services:
+  app:
+    build: .
+    container_name: auth-service
+    ports:
+      - "8080:8080"
+    volumes:
+      # Mount keys so the app can read them
+      - ./student_private.pem:/app/student_private.pem
+      - ./student_public.pem:/app/student_public.pem
+      - ./instructor_public.pem:/app/instructor_public.pem
+      # Mount persistent storage
+      - seed-data:/data
+      - cron-output:/cron
+    environment:
+      - TZ=UTC
+    restart: unless-stopped
+
+volumes:
+  seed-data:
+  cron-output:

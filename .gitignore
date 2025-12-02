@@ -1,0 +1,10 @@
+encrypted_seed.txt
+decrypted_seed.txt
+data/
+crontab
+__pycache__/
+*.pyc
+.DS_Store
+.env
+.vscode/
+.idea/
